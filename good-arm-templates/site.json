@@ -51,5 +51,11 @@
         "serverFarmId": "[parameters('appPlanId')]"
       }
     }
-  ]
+  ],
+  "outputs": {
+    "siteUrl": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Web/sites', format('{0}site', parameters('namePrefix')))).hostNames[0]]"
+    }
+  }
 }
