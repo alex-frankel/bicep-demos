@@ -1,0 +1,10 @@
+ - delete demo rg completely
+ - quickly do the basics
+  * create a app plan, show off intellisense, params, outputs w/ resource completions
+ - do regular bicep build to show what that looks like
+ - show how app plan can be consumed as a module
+ - preview with what-if WITHOUT transpiling to JSON
+ - decompile a *slightly* more complex sample to show how easy it is to migrate
+  * consume that as a module as well
+ - add conditionals and deploy
+ - turkey out of oven to show two different types of nginx frontends
