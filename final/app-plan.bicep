@@ -1,15 +1,16 @@
 param namePrefix string
+param sku string = 'B1'
 
-resource farm 'microsoft.web/serverFarms@2020-06-01' = {
-  name: '${namePrefix}${uniqueString(resourceGroup().id)}'
+resource plan 'Microsoft.Web/serverfarms@2020-06-01' = {
+  name: '${namePrefix}-plan'
   location: resourceGroup().location
-  sku: {
-    name: 'B1'
-  }
   kind: 'linux'
+  sku: {
+    name: sku
+  }
   properties: {
     reserved: true
   }
 }
 
-output appPlanId string = farm.id
+output planId string = plan.id

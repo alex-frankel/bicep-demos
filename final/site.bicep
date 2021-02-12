@@ -6,7 +6,7 @@ param dockerImageTag string
 
 param appPlanId string
 
-resource site 'microsoft.web/sites@2020-06-01' = {
+resource namePrefix_site 'microsoft.web/sites@2020-06-01' = {
   name: '${namePrefix}-site'
   location: location
   properties: {
@@ -34,20 +34,3 @@ resource site 'microsoft.web/sites@2020-06-01' = {
     serverFarmId: appPlanId
   }
 }
-
-// var farmName = '${namePrefix}-farm'
-
-// resource farm 'microsoft.web/serverFarms@2020-06-01' = {
-//   name: farmName
-//   location: location
-//   sku: {
-//     name: 'B1'
-//     tier: 'Basic'
-//   }
-//   kind: 'linux'
-//   properties: {
-//     targetWorkerSizeId: 0
-//     targetWorkerCount: 1
-//     reserved: true
-//   }
-// }
