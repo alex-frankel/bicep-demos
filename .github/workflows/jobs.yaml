@@ -28,4 +28,4 @@ jobs:
             az version
             az account show
             az account set -s e93d3ee6-fac1-412f-92d6-bfb379e81af2
-            az deployment group what-if -f main.bicep -g brittle-hollow
+            az deployment sub what-if -f main.bicep -l eastus
